@@ -42,7 +42,7 @@ const TableItem: React.FC<{ Leave: LeaveView, type: string, cb: Dispatch<SetStat
                     </tr>
                 </thead>
                 {Leaves.map((leave) => (
-                    <tr className="hover" onClick={() => cb(leave.Details)}>
+                    <tr key={leave.Lea_Sid} className="hover" onClick={() => cb(leave.Details)}>
                         <th>
                             <div className="flex flex-col gap-2">
                                 {leave.Lev_Desc}

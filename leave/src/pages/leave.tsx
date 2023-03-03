@@ -238,7 +238,7 @@ const LeavePage = () => {
                 }}>
                   <option disabled selected value="">Leave Type</option>
                   {leaves && leaves.Leaves.map((leave) => (
-                    <option value={leave.Eml_Leave}>{leave.Lev_Desc}</option>
+                    <option value={leave.Eml_Leave} key={leave.Eml_Leave}>{leave.Lev_Desc}</option>
                   ))}
                 </select>
               </div>
@@ -270,7 +270,7 @@ const LeavePage = () => {
             <div>
               <h1 className="font-bold text-lg ">Date Breakdown:</h1>
               {leaveForm.Details.map((date, i) => (
-                <div className="flex justify-between py-3 border-b-[1.5px] items-center">
+                <div className="flex justify-between py-3 border-b-[1.5px] items-center" key={i}>
                   <h1>{date.Date}</h1>
 
                   <div>

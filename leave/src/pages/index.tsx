@@ -27,7 +27,7 @@ export default function LoginPage() {
         </div>
         <div className="divider"></div>
         {leaves && leaves.Leaves.map((leave) => (
-          <div className="flex justify-between">
+          <div className="flex justify-between" key={leave.Lev_Desc}>
             <h1 className="text-sm">{leave.Lev_Desc}</h1>
             <h1 className="text-sm font-bold">{leave.Availleave}</h1>
           </div>
@@ -68,7 +68,7 @@ export default function LoginPage() {
                       Leave Details
                     </Dialog.Title>
                     {details.map(date => (
-                      <div className="py-2 flex items-center justify-between border-t-[1.5px]">
+                      <div className="py-2 flex items-center justify-between border-t-[1.5px]" key={date.Lea_Ddate}>
                         <p className="text-sm text-gray-500">
                           {date.Lea_Ddate}
                         </p>
