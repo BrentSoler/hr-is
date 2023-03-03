@@ -6,7 +6,7 @@ interface IWebcard {
 
 const Webcard: React.FC<IWebcard> = ({ name, link }) => {
     return (
-        <a href={link} target="_blank">
+        <a href={link} target="_blank" rel="noreferrer">
             <div className="card w-96 bg-base-100 shadow-xl image-full">
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>
