@@ -2,7 +2,7 @@ import { Schedule } from "@/bindings/Schedule";
 
 export default function getDates(date_from: Date, date_to: Date, schedule: Schedule[]) {
     const date_arr = new Array();
-    const sched = schedule.map(sch => sch.sch_day.toLowerCase());
+    const sched = schedule.map(sch => sch.Sch_Day.toLowerCase());
     let current = date_from;
 
     while (current <= date_to) {
