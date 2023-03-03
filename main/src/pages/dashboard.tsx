@@ -37,7 +37,7 @@ const Dashboard: React.FC = () => {
           <h1 className="font-bold text-4xl">Welcome, {userInfo.Employee.Emp_Last}!</h1>
           <div className="flex gap-3 w-[100%] lg:w-[60%] justify-center flex-wrap">
             {userInfo.Access.map(module => (
-              <Webcard link={module.Mnu_Http ? `${module.Mnu_Http}/${token}` : ""} name={module.Mnu_Desc} />
+              <Webcard key={module.Mnu_Http} link={module.Mnu_Http ? `${module.Mnu_Http}/${token}` : ""} name={module.Mnu_Desc} />
             ))}
           </div>
         </>
