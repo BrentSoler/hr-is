@@ -26,6 +26,7 @@ async fn main() -> std::io::Result<()> {
     let main_url = std::env::var("MAIN_URL").expect("NO MAIN URL PROVIDED");
     let leave_url = std::env::var("LEAVE_URL").expect("NO LEAVE URL PROVIDED");
     let coa_url = std::env::var("COA_URL").expect("NO COA URL PROVIDED");
+    let port = std::env::var("PORT").expect("NO COA URL PROVIDED");
 
     HttpServer::new(move || {
         let cors = Cors::permissive();
@@ -48,7 +49,7 @@ async fn main() -> std::io::Result<()> {
             .service(update_coa)
             .service(cancel_coa)
     })
-    .bind(("127.0.0.1", 8082))?
+    .bind(("127.0.0.1", port.parse().unwrap()))?
     .run()
     .await
 }
