@@ -28,6 +28,8 @@ async fn main() -> std::io::Result<()> {
     let coa_url = std::env::var("COA_URL").expect("NO COA URL PROVIDED");
     let port = std::env::var("PORT").expect("NO COA URL PROVIDED");
 
+    println!("RUNNING ON PORT:{port}");
+
     HttpServer::new(move || {
         let cors = Cors::permissive();
 
