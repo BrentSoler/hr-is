@@ -174,7 +174,7 @@ const COAPage = () => {
 
             <div className="flex flex-col gap-4">
               {coaForm.details.map((detail, i) => (
-                <div className="flex gap-3">
+                <div className="flex gap-3" key={i}>
                   <select className="select select-bordered w-[20%]" value={detail.coa_dtype} onChange={(e) => changeDetail(i, "coa_dtype", e.target.value)} >
                     <option value="" disabled selected></option>
                     <option value="I">In</option>

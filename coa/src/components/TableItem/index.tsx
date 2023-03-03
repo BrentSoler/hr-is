@@ -37,7 +37,7 @@ const TableItem: React.FC<{ COA: COAView, type: string, refresh: () => Promise<v
                     </tr>
                 </thead>
                 {coa.map((coa) => (
-                    <tr className="hover items-center">
+                    <tr className="hover items-center" key={coa.coa_sid}>
                         <th>
                             <div className="flex flex-col">
                                 {coa.coa_stypedetail}
