@@ -28,13 +28,7 @@ async fn main() -> std::io::Result<()> {
     let coa_url = std::env::var("COA_URL").expect("NO COA URL PROVIDED");
 
     HttpServer::new(move || {
-        let cors = Cors::default()
-            .allowed_origin(&main_url)
-            .allowed_origin(&leave_url)
-            .allowed_origin(&coa_url)
-            .allowed_methods(vec!["GET", "POST", "PATCH", "PUT"])
-            .allowed_headers(vec![header::AUTHORIZATION, header::ACCEPT])
-            .allowed_header(header::CONTENT_TYPE);
+        let cors = Cors::permissive();
 
         App::new()
             .wrap(cors)
